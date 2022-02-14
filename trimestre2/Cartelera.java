@@ -1,20 +1,22 @@
 import java.util.Arrays;
-
+//Clase Publica Cartelera
 public class Cartelera {
-private static final String[] ciudades= {"madrid","barna","sevilla"};
-private Pelicula[][] cartelera;
-private int longitud;//n∫ de pelis por cada ciudad
-public Cartelera( int longitud) {
+private static final String[] ciudades= {"madrid","barna","sevilla"}; //Se crea un string que solo puede tener 3 posibilidades
+private Pelicula[][] cartelera; //Se crea el array bidimensional que se llama cartelera del tipo pelicula
+private int longitud;//numero de pelis por cada ciudad 
+public Cartelera( int longitud) {//Se crea un array del tama√±o de longitud
 	this.longitud = longitud;
 	this.cartelera = new Pelicula[ciudades.length][longitud];
 }
-public Cartelera(Pelicula[][] cartelera) {
+
+public Cartelera(Pelicula[][] cartelera) {  //Funcion que es del tipo Cartelera que se pasa por parametro un array del tipo Pelicula llamado cartelera
 	
-	this.cartelera = cartelera;
-	this.longitud = cartelera[0].length;
+	this.cartelera = cartelera; //El comando this. hace referencia al parametro 
+	this.longitud = cartelera[0].length; //El comando this. hace referencia al parametro 
+	return cartelera;
 }
-public void agregarPelicula (Pelicula p,String ciudad) {
-	int pos=-1;
+public void agregarPelicula (Pelicula p,String ciudad) { //Parametros que se pasan a la funcion para poder trabajar con ellos
+	int pos=-1; 
 	for (int i = 0; i < ciudades.length; i++) {
 		if (ciudades[i].equals(ciudad)) {
 			pos=i;
@@ -31,7 +33,7 @@ public void agregarPelicula (Pelicula p,String ciudad) {
 	}
 }
 @Override
-public String toString() {
+public String toString() { // Aun no se que es
 	String s="";
 	for (int i = 0; i < cartelera.length; i++) {
 		s+="\n cartelera de "+ciudades[i]+"\n";
